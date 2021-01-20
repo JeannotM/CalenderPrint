@@ -79,13 +79,24 @@ span#name {
 
 nav {
     height: 120px;
+    top:800px;
     position: absolute;
     width: 100%;
-    bottom: 0;
     left: 0;
     display: flex;
     justify-content: space-between;
 }
+
+@media only screen and (max-width: 720px) {
+    nav {
+        flex-direction: column-reverse;
+        flex-flow: wrap;
+        height:fit-content;
+    }
+    nav div{
+        margin:0 auto;
+    }
+  }
 
 div#size {
     display: flex;
