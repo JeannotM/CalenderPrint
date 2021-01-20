@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button.months {
+    padding: 8px 16px;
+    margin: 4px 4px;
+}
+
+button.months.selected {
+    background-color: #0095D4
+}
+
+#text {
+    user-select: none;
+    position:relative;
+}
+
+span#name {
+    z-index: 55;
+    position: relative;
+    display: block;
+    padding: 10px;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    text-shadow: black 1px 1px 5px;
+    z-index: 2;
+    line-height: 1 !important;
+}
+
+.btn{
+    padding:10px;
+    margin:4px 0 0 3px;
+    width:100%;
+}
+
+.dayHolder {
+    position: relative;
+    width: 46%;
+    height: 100%;
+    display: inline-block;
+    margin: 1%  2%;
+    font-size: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .75);
+}
+
+.dayHolder.long {
+    width: 92%;
+}
+
+.dayHolder .line {
+    display: inline-block;
+    position: relative;
+    top: -6px;
+    width: 100%;
+    background-color: black;
+    height: 1px;
+}
+
+#imageHolder {
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+#picture {
+    outline: 2px solid black;
+    background-color: #eee;
+    display: block;
+    margin: 16px auto;
+    width: 15cm;
+    height: 10cm;
+}
+
+/* Everything about the Nav */
+
+nav {
+    height: 120px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+div#size {
+    display: flex;
+    flex-direction: column;
+    width: 110px;
+}
+
+div#size div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+input[type=number] {
+    width: 60px;
+    font-size: 16px;
+    padding: 6px;
+    padding-right: 0;
+}
+
+div#sliders {
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div#sliders div {
+    width: 100%;
+    display: flex;
+    margin: 1px;
+    justify-content: space-between;
+}
+
+input[type=color] {
+    width: 128px;
+}
+
+div#detail {
+    width: 275px;
+    height: 110px;
+}
+
+div#detail button {
+    width: 55px;
+    height: 55px;
+    font-size: 8px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 60%;
+    display: inline-block;
+}
+
+.a4 {
+    display:inline-block;
+    margin:0;
+    position:relative;
+    z-index:400;
+}
+.tmpimg{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-repeat: no-repeat;
+    z-index:-300;
+}

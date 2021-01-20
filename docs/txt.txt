@@ -1,0 +1,4 @@
+https://stackoverflow.com/questions/33948464/move-an-image-with-javascript-using-mouse-events
+https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications
+https://fontawesome.com/
+https://tinypng.com/
