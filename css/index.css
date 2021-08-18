@@ -18,9 +18,11 @@ button.months.selected {
     position:relative;
 }
 
-span#name {
+h1#name {
+    -webkit-print-color-adjust: exact;
     z-index: 55;
     position: relative;
+    margin:0;
     display: block;
     padding: 10px;
     font-size: 32px;
@@ -55,10 +57,21 @@ span#name {
 .dayHolder .line {
     display: inline-block;
     position: relative;
+    overflow:hidden;
     top: -6px;
     width: 100%;
     background-color: black;
     height: 1px;
+}
+
+.line img {
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
 }
 
 #imageHolder {
@@ -79,7 +92,6 @@ span#name {
 
 nav {
     height: 120px;
-    top:800px;
     position: absolute;
     width: 100%;
     left: 0;
@@ -101,7 +113,7 @@ nav {
 div#size {
     display: flex;
     flex-direction: column;
-    width: 110px;
+    width: 120px;
 }
 
 div#size div {
@@ -158,6 +170,7 @@ div#detail button {
     z-index:400;
 }
 .tmpimg{
+    overflow:hidden;
     position:absolute;
     left:0;
     top:0;
@@ -165,4 +178,9 @@ div#detail button {
     height:100%;
     background-repeat: no-repeat;
     z-index:-300;
+}
+.imgField{
+    transform-origin: top left;
+    width:100%;
+    position:absolute;
 }

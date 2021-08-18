@@ -151,12 +151,12 @@ function changeMonth(month) {
 
 function formatText() {
     curr = fotos[currentMonth];
-    id("text").innerHTML = "<span id='name'>" + monthsarray[currentMonth] + "</span>";
+    id("text").innerHTML = "<h1 id='name'>" + monthsarray[currentMonth] + "</h1>";
     if (curr.format == 0) {
         str = document.createElement("p"); str.className = "dayHolder long"; str.style.lineHeight = curr.lineHeight;
         for (let i = 1; i <= curr.maxDays; i++) {
             str.innerHTML += i + "."
-            str.innerHTML += "<span class='line'></span>"
+            str.innerHTML += "<span class='line'><img src='img/black.jpg'></span>"
         }
         id("text").appendChild(str);
     } else {
@@ -165,11 +165,11 @@ function formatText() {
         for (let i = 1; i <= curr.maxDays; i++) {
             if (i <= (curr.maxDays - parseInt(curr.maxDays / 2))) {
                 str = i + "."
-                str += "<span class='line'></span>"
+                str += "<span class='line'><img src='img/black.jpg'></span>"
                 str1.innerHTML += str
             } else {
                 str = i + ".";
-                str += "<span class='line'></span>"
+                str += "<span class='line'><img src='img/black.jpg'></span>"
                 str2.innerHTML += str
             }
         }
@@ -241,26 +241,30 @@ function printToPage() {
         a4.style.width = f.width + "cm";
         a4.style.height = f.height + "cm";
         if (f.files[0]) {
-            var img = document.createElement("div");
-            img.className="tmpimg";
-            img.style.backgroundPosition = f.offsetX + " " + f.offsetY;
-            img.style.backgroundSize = f.size + "%";
+            var img = document.createElement("img");
+            var div = document.createElement("div");
+            div.className="tmpimg";
+            img.className="imgField";
+            img.style.left = f.offsetX + "px";
+            img.style.top = f.offsetY + "px";
+            img.style.transform = "scale("+(f.size / 100)+")";
             img.style.filter = "contrast(" + f.contrast + "%) saturate(" + f.saturation + "%) brightness(" + f.brightness + "%)";
             const reader = new FileReader();
-            reader.onload = (function (aImg) { return function (e) { aImg.style.backgroundImage = "url(" + e.target.result + ")"; }; })(img);
+            reader.onload = (function (aImg) { return function (e) { aImg.src = e.target.result; }; })(img);
             reader.readAsDataURL(f.files[0]);
-            a4.appendChild(img);
+            div.appendChild(img)
+            a4.appendChild(div);
         }
 
         var txt = document.createElement("div")
         txt.id = "text"
-        txt.innerHTML = "<span id='name'>" + monthsarray[i] + "</span>";
+        txt.innerHTML = "<h1 id='name'>" + monthsarray[i] + "</h1>";
         txt.style.color = f.titleColor;
         if (f.format == 0) {
             str = document.createElement("p"); str.className = "dayHolder long"; str.style.lineHeight = f.lineHeight; str.style.color = f.textColor;
             for (let i = 1; i <= f.maxDays; i++) {
                 str.innerHTML += i + "."
-                str.innerHTML += "<span class='line' style=background-color:"+f.textColor+"></span>"
+                str.innerHTML += "<span class='line' style=background-color:"+f.textColor+"><img src='img/black.jpg'></span>"
             }
             txt.appendChild(str);
         } else {
@@ -269,11 +273,11 @@ function printToPage() {
             for (let i = 1; i <= f.maxDays; i++) {
                 if (i <= (f.maxDays - parseInt(f.maxDays / 2))) {
                     str = i + "."
-                    str += "<span class='line' style='background-color:"+f.textColor+"'></span>"
+                    str += "<span class='line' style='background-color:"+f.textColor+"'><img src='img/black.jpg'></span>"
                     str1.innerHTML += str
                 } else {
                     str = i + ".";
-                    str += "<span class='line' style='background-color:"+f.textColor+"'></span>"
+                    str += "<span class='line' style='background-color:"+f.textColor+"'><img src='img/black.jpg'></span>"
                     str2.innerHTML += str
                 }
             }
